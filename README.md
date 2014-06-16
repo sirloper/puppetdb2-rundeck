@@ -18,7 +18,7 @@ The "public" directory should be empty.  The apache configuration (below) should
 Place both config.ru and puppetdb-rundeck.rb into the "application" directory. Edit puppetdb-rundeck.rb to set puppetdb_host and puppetdb_port to match your environment, as applicable.  Note that most installs of puppetdb will only listen to http:// requests from localhost.  SSL connections have not been tested.
 
 ###Apache Configuration
-Copy the puppetdb-rundec.conf file into your apache's configuration directory (on RHEL, this is /etc/httpd/conf.d).
+Copy the puppetdb-rundeck.conf file into your apache's configuration directory (on RHEL, this is /etc/httpd/conf.d).
 
 Mofify the file to ensure the path to the application's "public" directory is correct.  You may also change the listening port (default is 8888).
 
