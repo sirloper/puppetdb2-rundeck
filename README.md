@@ -1,6 +1,8 @@
 #puppetdb-rundeck
 Based on the project https://github.com/martin2110/puppetdb-rundeck, modified to expose facts and add documentation.
 
+Converted to a Puppet Forge module by Craig Dunn; all future development will be within the Forge module. https://forge.puppetlabs.com/crayfishx/puppetdb_rundeck
+
 sinatra app that glues puppetdb and rundeck together. 
 
 Requires sinatra 
