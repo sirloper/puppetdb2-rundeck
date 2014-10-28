@@ -52,8 +52,8 @@ get '/' do
 		
 	puppetdb_data.each{|d|
 	host     = d['certname']
-	name     = d['name']
-	value	 = d['value']
+	name     = d['name'] if d['name'] != "hostname"
+        value    = d['value'] if d['name'] != "hostname"
 	rundeck_resources[host][name] = value
 	}
 
