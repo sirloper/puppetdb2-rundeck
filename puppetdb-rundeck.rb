@@ -54,12 +54,7 @@ get '/' do
 	host     = d['certname']
 	name     = d['name'] if d['name'] != "hostname"
         value    = d['value'] if d['name'] != "hostname"
-	# Hack that will hide serial numbers but prevent supermicro macines from killing the parse to runeck.
-	if d['name'] = 'serialnumber'
-		 rundeck_resources[host][name] = 'Not Specified'
-	else
-		rundeck_resources[host][name] = value
-	end
+	rundeck_resources[host][name] = value
 	}
 
 	rundeck_resources.to_yaml
