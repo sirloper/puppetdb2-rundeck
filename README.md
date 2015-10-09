@@ -5,7 +5,7 @@ sinatra app that glues puppetdb and rundeck together.
 
 Requires sinatra 
 
-set host_uri and port in the script
+set host_url and cache_timeout (seconds) in the script
 
 ##Installation
 ###Application Configuration
