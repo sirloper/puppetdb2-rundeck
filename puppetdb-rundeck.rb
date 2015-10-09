@@ -9,7 +9,7 @@ require 'sinatra'
 # Base URL of the PuppetDB database.  Do not include a trailing slash!
 HOST_URL = 'http://localhost:8080'
 # Number of seconds to cache the previous results for
-CACHE_SECONDS = 60
+CACHE_SECONDS = 300
 
 class PuppetDB
 
