@@ -22,12 +22,12 @@ class PuppetDB
 
   def get_json(url, form_data = nil)
 		uri = URI.parse( url )
-		http = Net::HTTP.new(uri.host, uri.port) 
+		http = Net::HTTP.new(uri.host, uri.port)
 
-		request = Net::HTTP::Get.new(uri.path) 
-		if form_data 
+		request = Net::HTTP::Get.new(uri.path)
+		if form_data
 			request.set_form_data( form_data )
-			request = Net::HTTP::Get.new( uri.path+ '?' + request.body ) 
+			request = Net::HTTP::Get.new( uri.path+ '?' + request.body )
 		end
 		request.add_field("Accept", "application/json")
 
@@ -78,7 +78,7 @@ class Rundeck
 
   def build_resources
   	resources = Hash.new
-		@puppetdb.resources.each do |d| 
+		@puppetdb.resources.each do |d|
 			host     = d['certname']
 			title    = d['title']
 			resources[host] = Hash.new if !resources.key?(host)
@@ -97,6 +97,8 @@ class Rundeck
 			if d['name'] != "hostname"
 				name  = d['name']
 		    value = d['value'] if d['name'] != "hostname"
+        resources[host] = Hash.new if !resources.key?(host)
+        resources[host][name] = Hash.new if !resources[host].key?(name)
 		    if ( name == 'serialnumber' )
 		      resources[host][name] = 'Serial Number ' + value
 		    else
