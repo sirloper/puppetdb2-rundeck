@@ -21,7 +21,7 @@ out the puppetdb to rundeck intergration by simply running the following command
     -e PUPPET_URL='http://your.puppet.db:8080/' \
     -e 'CACHE_SECONDS=300' \
     -p 3000:3000 \
-    warmfusion/puppetdb2rundeck
+    warmfusion/puppetdb2-rundeck
 ```
 
 |param|type|default|description|
