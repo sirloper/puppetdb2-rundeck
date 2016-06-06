@@ -7,9 +7,9 @@ require 'yaml'
 require 'sinatra'
 
 # Base URL of the PuppetDB database.  Do not include a trailing slash!
-HOST_URL = 'http://localhost:8080'
+HOST_URL = ENV['PUPPET_URL'] ||= 'http://puppet:8080'
 # Number of seconds to cache the previous results for
-CACHE_SECONDS = 300
+CACHE_SECONDS = ENV['CACHE_SECONDS'].to_i ||= 1800
 
 class PuppetDB
 
@@ -120,6 +120,8 @@ end
 
 puppetdb = PuppetDB.new
 rundeck  = Rundeck.new(puppetdb)
+
+set :bind, '0.0.0.0'
 
 before do
   response["Content-Type"] = "application/yaml"
