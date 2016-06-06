@@ -2,11 +2,33 @@
 
 Based on the project https://github.com/martin2110/puppetdb-rundeck, modified to expose facts and add documentation.
 
-sinatra app that glues puppetdb and rundeck together. 
+sinatra app that glues puppetdb and rundeck together.
 
-Requires sinatra 
+Requires sinatra
 
 set host_url and cache_timeout (seconds) in the script
+
+## Quick Start
+
+
+### Docker
+
+A docker container has been made which lets you very quickly start and test
+out the puppetdb to rundeck intergration by simply running the following command.
+
+```
+  docker run \
+    -e PUPPET_URL='http://your.puppet.db:8080/' \
+    -e 'CACHE_SECONDS=300' \
+    -p 3000:3000 \
+    warmfusion/puppetdb2rundeck
+```
+
+|param|type|default|description|
+|----|----|----|---|
+|:PUPPET_URL|:string| http://puppet:8080/ | URL to your PuppetDB server |
+|:CACHE_SECONDS|:integer|1800| How long to cache the facts about your servers |
+
 
 ## Installation
 
