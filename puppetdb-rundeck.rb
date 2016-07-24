@@ -7,7 +7,8 @@ require 'yaml'
 require 'sinatra'
 
 # Base URL of the PuppetDB database.  Do not include a trailing slash!
-HOST_URL = 'http://localhost:8080'
+HOST_URL = 'http://localhost:8080' # Example: 'http://localhost:8080/pdb/query'
+PDB_VER = 'v4'
 # Number of seconds to cache the previous results for
 CACHE_SECONDS = 300
 
@@ -46,7 +47,7 @@ class PuppetDB
 
   def get_resources
     puppetdb_resource_query = {'query'=>'["=", "type", "Class"],]'}
-    url = "#{HOST_URL}/v3/resources"
+    url = "#{HOST_URL}/#{PDB_VER}/resources"
     resources = get_json(url, puppetdb_resource_query)
   end
 
@@ -60,7 +61,7 @@ class PuppetDB
   end
 
   def get_facts
-    url = "#{HOST_URL}/v3/facts"
+    url = "#{HOST_URL}/#{PDB_VER}/facts"
     facts = get_json(url)
   end
 end
