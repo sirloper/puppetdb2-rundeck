@@ -10,6 +10,7 @@ require 'sinatra'
 HOST_URL = 'http://localhost:8080' # Example: 'http://localhost:8080/pdb/query'
 # Number of seconds to cache the previous results for
 CACHE_SECONDS = ENV['CACHE_SECONDS'].to_i ||= 1800
+PDB_VER = 'v4'
 
 class PuppetDB
 
