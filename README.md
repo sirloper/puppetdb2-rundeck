@@ -14,7 +14,7 @@ set host_url and cache_timeout (seconds) in the script
 ### Docker
 
 A docker container has been made which lets you very quickly start and test
-out the puppetdb to rundeck intergration by simply running the following command.
+out the puppetdb to rundeck integration by simply running the following command.
 
 ```
   docker run \
@@ -46,11 +46,11 @@ Place both config.ru and puppetdb-rundeck.rb into the "application" directory. E
 
 ### Apache Module and Configuration
 
-Install Apache Module `phusion passenger` as [descirbed here](http://recipes.sinatrarb.com/p/deployment/apache_with_passenger)
+Install Apache Module `phusion passenger` as [described here](http://recipes.sinatrarb.com/p/deployment/apache_with_passenger)
 
 Copy the puppetdb-rundeck.conf file into your apache's configuration directory (on RHEL, this is /etc/httpd/conf.d).
 
-Mofify the file to ensure the path to the application's "public" directory is correct.  You may also change the listening port (default is 8888).
+Modify the file to ensure the path to the application's "public" directory is correct.  You may also change the listening port (default is 8888).
 
 Restart apache (on RHEL/derivatives: service httpd restart)
 
